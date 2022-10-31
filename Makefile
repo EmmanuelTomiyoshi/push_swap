@@ -24,7 +24,10 @@ CFLAGS 			+= -g -I ${FT_PRINTFDIR} -I ${LIBFTDIR} -I ${INCDIR}
 LIBFLAGS 		= -lft -lftprintf
 CC 				= cc
 
-FILES   		=	binary_search.c combinations.c push_swap.c
+FILES   		=	push_swap.c	push_operations.c		\
+					ft_newnode.c ft_nodeadd_back.c ft_nodeadd_front.c	\
+					ft_clearnode.c ft_nodel.c ft_lastnode.c	\
+					print_stacks.c
 
 # FILES_B		=	
 

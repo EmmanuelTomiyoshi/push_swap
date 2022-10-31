@@ -5,105 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/24 10:00:08 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/10/24 12:23:13 by etomiyos         ###   ########.fr       */
+/*   Created: 2022/10/27 11:53:53 by etomiyos          #+#    #+#             */
+/*   Updated: 2022/10/31 15:40:05 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-typedef struct  s_node
+void	init_data(t_push_swap *ps, int argc)
 {
-	int		value;
-	void	*next;
-}               t_node;
-
-
-void	swap_nodes(t_node **list, int first_num, int second_num)
-{
-	t_node *node_one;
-	t_node *last_node_one;
-	t_node *node_two;
-	t_node *last_node_two;
-	t_node *temp;
-
-	node_one = *list;
-	last_node_one = NULL;
-	while (node_one)
-	{
-		if (node_one->value == first_num)
-			break ;
-		last_node_one = node_one;
-		node_one = node_one->next;
-	}
-	node_two = *list;
-	last_node_two = NULL;
-	while (node_two)
-	{
-		if (node_two->value == second_num)
-			break ;
-		last_node_two = node_two;
-		node_two = node_two->next;
-	}
-	if (node_one->value == first_num && node_two->value == second_num)
-	{
-		if (last_node_one)
-			last_node_one->next = node_two;
-		if (last_node_two)
-			last_node_two->next = node_one;
-		temp = node_one->next;
-		node_one->next = node_two->next;
-		node_two->next = temp;
-	}
+	ps->argc = argc - 1;
+	ps->stack_a = NULL;
+	ps->stack_b = NULL;
 }
 
-void    insert_first(t_node **list, int num)
+void	check_args(int argc)
 {
-	t_node *new_node = ft_calloc(sizeof(t_node), 1);
-	if (new_node)
-	{
-		new_node->value = num;
-		new_node->next = *list;
-		*list = new_node;
-	}
-	else
-		ft_printf("Couldn't create node!\n");
+	if (argc < 2)
+		exit(1);
 }
 
-void	debug_list(t_node **list)
+int	main(int argc, char *argv[])
 {
-	t_node *node;
-	
-	node = *list;
-	while (node)
-	{
-		// if (node->next == NULL)
-		// 	break ;
-		ft_printf("node->value = %d | node->next = %p\n", node->value, node->next);
-		node = node->next;
-	}
-}
-int main()
-{
+	t_push_swap ps;
 	int i;
-	int arr[6] = {4, 3, 5, 2, 7, 1};
-	t_node *node;
 
-	node = NULL;
-	i = 0;
-	while (i < 6)
+	i = 1;
+	check_args(argc);
+	init_data(&ps, argc);
+	ps.stack_a = ft_newnode(ft_atoi(argv[i]));
+	while (i < ps.argc)
 	{
-		insert_first(&node, arr[i]);
+		ft_nodeadd_back(&ps.stack_a, ft_newnode(ft_atoi(argv[i + 1])));
 		i++;
 	}
-	debug_list(&node);
-	swap_nodes(&node, 3, 7);
-	ft_printf("\nOK!\n");
-	debug_list(&node);
-	return (0);
+	print_stacks(ps.stack_a, ps.stack_b);
+    ft_clearnode(ps.stack_a);
+    ft_clearnode(ps.stack_b);
+    
+    return (0);
 }
-
-//memória x perfomance
-//time complexity
-
-//

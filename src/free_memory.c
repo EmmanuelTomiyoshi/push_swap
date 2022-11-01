@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free_memory.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 11:53:53 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/01 17:22:48 by etomiyos         ###   ########.fr       */
+/*   Created: 2022/11/01 17:18:25 by etomiyos          #+#    #+#             */
+/*   Updated: 2022/11/01 17:18:33 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	free_memory(t_push_swap *ps)
 {
-	t_push_swap ps;
-
-	check_args(argc, argv);
-	init_data(&ps, argc, argv);
-	stack_building(&ps);
-	free_memory(&ps);
-    return (0);
+	free(ps->argv);
+    ft_clearnode(ps->stack_a);
+    ft_clearnode(ps->stack_b);
 }

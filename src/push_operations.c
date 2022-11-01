@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:03:21 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/10/31 15:25:52 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/01 16:42:25 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	rotate_reverse(t_node **node)
 {
 	t_node *temp;
 
-	temp = ft_lastnode(*node); //4
-	before_last(*node)->next = NULL; //3 -> NULL
+	temp = ft_lastnode(*node);
+	before_last(*node)->next = NULL;
 	temp->next = *node;
 	*node = temp;
 }

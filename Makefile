@@ -19,7 +19,7 @@ REQUIRED_DIRS	= ${OBJDIR} bin/
 # REQUIRED_DIRS	= ${OBJDIR} ${OBJDIR_B} bin/
 
 LIBFLAGS 		= -lft
-CFLAGS 			= -Wall -Werror -Wextra
+#CFLAGS 		= -Wall -Werror -Wextra
 CFLAGS 			+= -g -I ${FT_PRINTFDIR} -I ${LIBFTDIR} -I ${INCDIR}
 LIBFLAGS 		= -lft -lftprintf
 CC 				= cc
@@ -27,7 +27,7 @@ CC 				= cc
 FILES   		=	push_swap.c	push_operations.c		\
 					ft_newnode.c ft_nodeadd_back.c ft_nodeadd_front.c	\
 					ft_clearnode.c ft_nodel.c ft_lastnode.c	\
-					print_stacks.c
+					print_stacks.c error_handling.c free_memory.c init_data.c \
 
 # FILES_B		=	
 

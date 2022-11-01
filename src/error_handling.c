@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:02:36 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/01 17:06:25 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:15:34 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 void	check_args(int argc, char *argv[])
 {
     insufficient_args(argc);
-	check_invalid_char(argv);
+	check_is_digit(argv);
 }
 
-void    insufficient_args(int argc)
+void	insufficient_args(int argc)
 {
     if (argc <= 2)
 		exit(1);
 }
 
-int    check_invalid_char(char *argv[])
+int	check_is_digit(char *argv[])
 {
     int	i;
 
     i = 1;
     while (argv[i])
     {
-        if (check_is_digit(argv[i]) == -1)
+        if (check_arg_is_digit(argv[i]) == -1)
         {
 			ft_printf("Error\n");
 			exit(1);
@@ -41,7 +41,7 @@ int    check_invalid_char(char *argv[])
     return (0);
 }
 
-int	check_is_digit(char *str)
+int	check_arg_is_digit(char *str)
 {
 	int	i;
 

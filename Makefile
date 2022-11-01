@@ -15,8 +15,6 @@ INCDIR  		= include/
 BIN				= bin/push_swap
 # BIN_B			= bin/push_swap_bonus
 
-REQUIRED_DIRS	= ${OBJDIR} bin/
-# REQUIRED_DIRS	= ${OBJDIR} ${OBJDIR_B} bin/
 
 LIBFLAGS 		= -lft
 #CFLAGS 		= -Wall -Werror -Wextra
@@ -24,10 +22,18 @@ CFLAGS 			+= -g -I ${FT_PRINTFDIR} -I ${LIBFTDIR} -I ${INCDIR}
 LIBFLAGS 		= -lft -lftprintf
 CC 				= cc
 
-FILES   		=	push_swap.c	push_operations.c		\
-					ft_newnode.c ft_nodeadd_back.c ft_nodeadd_front.c	\
-					ft_clearnode.c ft_nodel.c ft_lastnode.c	\
-					print_stacks.c error_handling.c free_memory.c init_data.c \
+FILES   		=	node_operations/ft_clearnode.c		\
+					node_operations/ft_lastnode.c		\
+					node_operations/ft_newnode.c		\
+					node_operations/ft_nodeadd_back.c	\
+					node_operations/ft_nodeadd_front.c	\
+					node_operations/ft_nodel.c			\
+					error_handling.c					\
+					free_memory.c						\
+					init_data.c							\
+					print_stacks.c						\
+					push_operations.c					\
+					push_swap.c							\
 
 # FILES_B		=	
 
@@ -36,13 +42,14 @@ OBJ 			= ${addprefix ${OBJDIR}, ${FILES:.c=.o}}
 # SRC_B 			= ${addprefix ${SRCDIR_B}, ${FILES_B}}
 # OBJ_B 			= ${addprefix ${OBJDIR_B}, ${FILES_B:.c=.o}}
 
-COLOR_WHITE		= \e[00m
-COLOR_GREEN		= \e[32m
-COLOR_RED		= \e[91m
-COLOR_BLUE		= \e[34m
+REQUIRED_DIRS	= ${sort ${dir ${OBJ}}} bin/
+# REQUIRED_DIRS	= ${OBJDIR} bin/
+# REQUIRED_DIRS	= ${OBJDIR} ${OBJDIR_B} bin/
 
 all: ${NAME}
 
+print:
+	echo ${REQUIRED_DIRS}
 # bonus: ${BIN_B}
 
 ${REQUIRED_DIRS}:
@@ -50,6 +57,7 @@ ${REQUIRED_DIRS}:
 
 ${OBJDIR}%.o: ${SRCDIR}%.c
 	@echo "$(COLOR_GREEN)Compiling $(COLOR_WHITE)$(<:.c=)"
+# @mkdir -p $(dir $@)
 	@${CC} ${CFLAGS} -c $< -o $@
 
 # ${OBJDIR_B}%.o: ${SRCDIR_B}%.c
@@ -78,7 +86,7 @@ ${FT_PRINTF}:
 clean:
 	@echo "$(COLOR_RED)Removing $(COLOR_WHITE)all objects"
 	@rm -rf ${OBJDIR}
-	# @rm -rf ${OBJDIR_B}
+# @rm -rf ${OBJDIR_B}
 	cd $(LIBPRINTFDIR) && make clean
 	cd $(LIBFTDIR) && make clean
 
@@ -86,7 +94,7 @@ fclean: clean
 	@echo "$(COLOR_RED)Removing $(COLOR_WHITE)$(NAME)"
 	rm -rf ${NAME}
 	rm -rf ${BIN}
-	# rm -rf ${BIN_B}
+# rm -rf ${BIN_B}
 	rm -rf ${FT_PRINTF}
 	rm -rf ${LIBFT}
 
@@ -97,3 +105,8 @@ norm:
 	@norminette ${SRC} ${INCDIR}* | grep Error || true
 
 .PHONY: re fclean clean all norm
+
+COLOR_WHITE		= \e[00m
+COLOR_GREEN		= \e[32m
+COLOR_RED		= \e[91m
+COLOR_BLUE		= \e[34m

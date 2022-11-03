@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/01 18:12:38 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/03 20:11:30 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,12 @@ void	free_memory(t_push_swap *ps);
 //	Error handling {
 void	check_args(int argc, char *argv[]);
 void	insufficient_args(int argc);
-int     check_is_digit(char *argv[]);
-int     check_arg_is_digit(char *str);
+void	check_is_digit(char *argv[]);
+void	check_arg_is_digit(char *str);
 //	}
+
+void	check_limits_int(char *str);
+void	bubble_sort(t_push_swap *ps);
+void	check_duplicates(int argc, char *argv[]);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:17:32 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/01 17:19:17 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/03 09:11:11 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,4 @@ void	stack_building(t_push_swap *ps)
 		ft_nodeadd_back(&ps->stack_a, ft_newnode(ps->argv[i + 1]));
 		i++;
 	}
-    print_stacks(ps->stack_a, ps->stack_b);
 }

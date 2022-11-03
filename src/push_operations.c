@@ -6,11 +6,35 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:03:21 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/01 16:42:25 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/03 13:38:49 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// void	bubble_sort(t_push_swap *ps)
+// {
+// 	int		i;
+// 	int		j;
+// 	t_node	*temp;
+
+// 	i = 0;
+// 	while (i < ps->argc)
+// 	{
+// 		j = 0;
+// 		while (j < ps->argc - i - 1)
+// 		{
+// 			if (ps->stack_a->value > ps->stack_a->next->value)
+// 			{
+// 				temp->value = ps->stack_a->value;
+// 				swap(&ps->stack_a);
+// 				ps->stack_a->next->value = temp->value;
+// 			}
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// }
 
 void	rotate_reverse(t_node **node)
 {

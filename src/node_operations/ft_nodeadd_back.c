@@ -26,3 +26,14 @@ void	ft_nodeadd_back(t_node **lst, t_node *last_node)
 		node->next = last_node;
 	}
 }
+
+t_node	*before_last(t_node *node)
+{
+	while (node)
+	{
+		if (!node->next->next)
+			return (node);
+		node = node->next;
+	}
+	return (NULL);
+}

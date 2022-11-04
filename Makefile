@@ -28,11 +28,13 @@ FILES   		=	node_operations/ft_clearnode.c		\
 					node_operations/ft_nodeadd_back.c	\
 					node_operations/ft_nodeadd_front.c	\
 					node_operations/ft_nodel.c			\
-					error_handling.c					\
+					error_handling/error_handling.c		\
+					error_handling/utils.c				\
 					free_memory.c						\
 					init_data.c							\
 					print_stacks.c						\
-					push_operations.c					\
+					push_operations/both_stacks.c		\
+					push_operations/single_stack.c		\
 					push_swap.c							\
 
 # FILES_B		=	

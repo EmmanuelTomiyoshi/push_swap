@@ -6,13 +6,15 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/03 20:11:30 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/03 21:08:58 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSHSWAP_H
 
 # define PUSHSWAP_H
+# define MAX_INT +2147483647
+# define MIN_INT -2147483648
 
 # include "libft.h"
 # include "ft_printf.h"
@@ -32,10 +34,12 @@ typedef struct  s_push_swap
     int    *argv;
 }               t_push_swap;
 
-
-void	check_args(int argc, char *argv[]);
-void	init_argv_data(t_push_swap *ps, char *argv[]);
+//Init data
 void	init_data(t_push_swap *ps, int argc, char *argv[]);
+void	argv_atoi(t_push_swap *ps, char *argv[]);
+void	stack_building(t_push_swap *ps);
+
+//Node operations
 t_node	*ft_newnode(int content);
 void	ft_nodeadd_back(t_node **lst, t_node *last_node);
 void	ft_nodeadd_front(t_node **lst, t_node *new);
@@ -43,29 +47,31 @@ void	ft_clearnode(t_node *stack);
 void	ft_nodel(t_node *lst, void (*del)(int));
 t_node	*ft_lastnode(t_node *lst);
 t_node	*before_last(t_node *node);
-void    print_stacks(t_node *a, t_node *b);
 void	stack_building(t_push_swap *ps);
 
+//Push operations
 void	rotate_reverse(t_node **node);
 void    rotate_reverse_both(t_node **node1, t_node **node2);
 void	rotate(t_node **node);
 void	rotate_both(t_node **node1, t_node **node2);
+t_node	*before_last(t_node *node);
 void    push(t_node **node1, t_node **node2);
 void	swap(t_node **node);
 void	swap_both(t_node **node1, t_node **node2);
 
-void	argv_atoi(t_push_swap *ps, char *argv[]);
-
-void	free_memory(t_push_swap *ps);
-//	Error handling {
+//Error handling
 void	check_args(int argc, char *argv[]);
+void	check_valid_number(char *argv[]);
 void	insufficient_args(int argc);
-void	check_is_digit(char *argv[]);
-void	check_arg_is_digit(char *str);
-//	}
-
-void	check_limits_int(char *str);
-void	bubble_sort(t_push_swap *ps);
 void	check_duplicates(int argc, char *argv[]);
+void	error_message();
+void	check_is_digit(char *str);
+void	check_limits_int(char *str);
+
+//Print stacks
+void    print_stacks(t_node *a, t_node *b);
+
+//Free memory
+void	free_memory(t_push_swap *ps);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:17:32 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/03 09:11:11 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/07 09:05:19 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	init_data(t_push_swap *ps, int argc, char *argv[])
 
 void	argv_atoi(t_push_swap *ps, char *argv[])
 {
-	int i;
-	
+	int	i;
+
 	i = 1;
 	ps->argv = ft_calloc(sizeof(char *), ps->argc + 1);
 	while (i <= ps->argc)
@@ -35,7 +35,7 @@ void	argv_atoi(t_push_swap *ps, char *argv[])
 
 void	stack_building(t_push_swap *ps)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	ps->stack_a = ft_newnode(ps->argv[i]);

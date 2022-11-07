@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 10:32:21 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/10/24 10:16:26 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/07 09:15:02 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define INT_MAX 2147483647
 
-long long unsigned int factorial(int n)
+long long unsigned int  factorial(int n)
 {
     int                     i;
     long long unsigned int  fact;

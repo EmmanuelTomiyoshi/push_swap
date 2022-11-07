@@ -14,14 +14,14 @@
 
 void	ft_clearnode(t_node *stack)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (stack == NULL)
 		return ;
-    while (stack != NULL)
-    {
-        temp = stack->next;
-        free(stack);
-        stack = temp;
-    }
+	while (stack != NULL)
+	{
+		temp = stack->next;
+		free(stack);
+		stack = temp;
+	}
 }

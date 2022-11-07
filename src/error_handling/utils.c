@@ -6,13 +6,13 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:42:27 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/03 21:22:45 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/07 09:03:53 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_message()
+void	error_message(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);

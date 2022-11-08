@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/07 09:13:56 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/07 22:55:10 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct s_push_swap
 void	init_data(t_push_swap *ps, int argc, char *argv[]);
 void	argv_atoi(t_push_swap *ps, char *argv[]);
 void	stack_building(t_push_swap *ps);
+void	sorted_check(t_push_swap *ps);
+int		is_sorted(t_node *temp);
 
 //Node operations
 t_node	*ft_newnode(int content);
@@ -62,6 +64,7 @@ void	check_valid_number(char *argv[]);
 void	insufficient_args(int argc);
 void	check_duplicates(int argc, char *argv[]);
 void	error_message(void);
+// void	check_is_digit(char *str);
 void	check_is_digit(char *str);
 void	check_limits_int(char *str);
 

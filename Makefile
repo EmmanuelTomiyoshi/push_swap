@@ -36,6 +36,8 @@ FILES   		=	node_operations/ft_clearnode.c		\
 					push_operations/both_stacks.c		\
 					push_operations/single_stack.c		\
 					push_swap.c							\
+					sort_algorithm/less_than_five.c		\
+					sort_algorithm/utils.c				\
 
 # FILES_B		=	
 

@@ -6,11 +6,14 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 10:32:21 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/07 09:15:02 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:15:26 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+// #include "push_swap.h"
+
+#include <stdio.h>
+#include <stdlib.h>
 
 #define INT_MAX 2147483647
 
@@ -66,12 +69,17 @@ int simple_combination(int n, int p)
     return (0);
 }
 
-// int main(void)
-// {
-//     int                     n;
-//     int                     p;
+int main(void)
+{
+    int                     n;
+    int                     p;
 
-//     n = 10;
-//     p = 4;
-//     simple_combination(n, p);
-// }
+    n = 10;
+    p = 2;
+    int i = 1;
+    while (i < n)
+    {
+        simple_combination(n, i);
+        i++;
+    }
+}

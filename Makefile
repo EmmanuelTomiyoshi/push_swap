@@ -8,7 +8,7 @@ FT_PRINTFDIR 	= ft_printf/include
 
 SRCDIR  		= src/
 OBJDIR  		= obj/
-# SRCDIR_B  		= src_bonus/
+# SRCDIR_B  	= src_bonus/
 # OBJDIR_B		= obj_bonus/
 INCDIR  		= include/
 
@@ -22,23 +22,24 @@ CFLAGS 			+= -g -I ${FT_PRINTFDIR} -I ${LIBFTDIR} -I ${INCDIR}
 LIBFLAGS 		= -lft -lftprintf
 CC 				= cc
 
-FILES   		=	node_operations/ft_clearnode.c		\
-					node_operations/ft_lastnode.c		\
-					node_operations/ft_newnode.c		\
-					node_operations/ft_nodeadd_back.c	\
-					node_operations/ft_nodeadd_front.c	\
-					node_operations/ft_nodel.c			\
-					error_handling/error_handling.c		\
-					error_handling/utils.c				\
-					free_memory.c						\
-					init_data.c							\
-					print_stacks.c						\
-					push_operations/both_stacks.c		\
-					push_operations/single_stack.c		\
-					push_swap.c							\
-					sort_algorithm/less_than_five.c		\
-					sort_algorithm/utils.c				\
-
+FILES   		=	data_handling/free_memory.c					\
+					data_handling/init_data.c					\
+					error_handling/check_args.c					\
+					error_handling/error_message.c				\
+					error_handling/utils_error_handling.c		\
+					node_operations/ft_clearnode.c				\
+					node_operations/ft_lastnode.c				\
+					node_operations/ft_newnode.c				\
+					node_operations/ft_nodeadd_back.c			\
+					node_operations/ft_nodeadd_front.c			\
+					node_operations/ft_nodel.c					\
+					other/print_stacks.c						\
+					push_operations/operations_both_stacks.c	\
+					push_operations/operations_single_stack.c	\
+					sort_algorithm/check_is_sorted.c			\
+					sort_algorithm/less_than_six.c				\
+					sort_algorithm/utils_sort_algorithm.c		\
+					main.c
 # FILES_B		=	
 
 SRC 			= ${addprefix ${SRCDIR}, ${FILES}}

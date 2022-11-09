@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/07 22:55:10 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:58:45 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,28 @@ typedef struct s_push_swap
 	int		*argv;
 }				t_push_swap;
 
+//Check arguments
+void	check_args(int argc, char *argv[]);
+void	check_valid_number(char *argv[]);
+void	check_insufficient_args(int argc);
+void	check_duplicates(int argc, char *argv[]);
+void	check_is_sorted(int argc, char *argv[]);
+
+//Error message
+void	error_message(void);
+
 //Init data
 void	init_data(t_push_swap *ps, int argc, char *argv[]);
 void	argv_atoi(t_push_swap *ps, char *argv[]);
 void	stack_building(t_push_swap *ps);
-void	sorted_check(t_push_swap *ps);
-int		is_sorted(t_node *temp);
+int		is_sorted(t_push_swap *ps);
+void	check_is_sorted(int argc, char *argv[]);
+int		check_highest_number(t_push_swap *ps);
+int		check_lowest_number(t_push_swap *ps);
+void	sort_five(t_push_swap *ps);
+void	sort_four(t_push_swap *ps);
+void	sort_three(t_push_swap *ps);
+void	sort_two(t_push_swap *ps);
 
 //Node operations
 t_node	*ft_newnode(int content);
@@ -58,12 +74,6 @@ void	push(t_node **node1, t_node **node2);
 void	swap(t_node **node);
 void	swap_both(t_node **node1, t_node **node2);
 
-//Error handling
-void	check_args(int argc, char *argv[]);
-void	check_valid_number(char *argv[]);
-void	insufficient_args(int argc);
-void	check_duplicates(int argc, char *argv[]);
-void	error_message(void);
 // void	check_is_digit(char *str);
 void	check_is_digit(char *str);
 void	check_limits_int(char *str);

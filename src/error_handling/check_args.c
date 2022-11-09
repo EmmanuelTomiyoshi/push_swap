@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handling.c                                   :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:02:36 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/07 22:39:53 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/08 22:58:58 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 void	check_args(int argc, char *argv[])
 {
 	check_valid_number(argv);
-	insufficient_args(argc);
+	check_insufficient_args(argc);
 	check_duplicates(argc, argv);
+	check_is_sorted(argc, argv);
 }
 
 void	check_valid_number(char *argv[])
@@ -33,7 +34,7 @@ void	check_valid_number(char *argv[])
 	}
 }
 
-void	insufficient_args(int argc)
+void	check_insufficient_args(int argc)
 {
 	if (argc <= 2)
 		exit(1);
@@ -58,4 +59,18 @@ void	check_duplicates(int argc, char *argv[])
 		}
 		i++;
 	}
+}
+
+void	check_is_sorted(int argc, char *argv[])
+{
+	int	i;
+
+	i = 0;
+	while (i < argc - 1)
+	{
+		if (ft_atoi(argv[i]) > ft_atoi(argv[i + 1]))
+			return ;
+		i++;
+	}
+	exit(1);
 }

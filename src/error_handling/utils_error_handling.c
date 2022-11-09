@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_error_handling.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:42:27 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/07 22:48:14 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/08 22:59:28 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	error_message(void)
-{
-	write(2, "Error\n", 6);
-	exit(1);
-}
 
 void	check_is_digit(char *str)
 {
@@ -36,7 +30,7 @@ void	check_is_digit(char *str)
 void	check_limits_int(char *str)
 {
 	char	*converted_str;
-	
+
 	if (str[0] == '+')
 		str++;
 	while (str[0] == '0' && str[1] != '\0')

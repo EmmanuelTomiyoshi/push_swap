@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:23:34 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/08 23:00:07 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:44:21 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_two(t_push_swap *ps)
 {
 	if (!is_sorted(ps))
-		swap(&ps->stack_a);
+		run_swap(ps, "sa");
 }
 
 void	sort_three(t_push_swap *ps)
@@ -27,12 +27,12 @@ void	sort_three(t_push_swap *ps)
 	{
 		if (index == 0)
 		{
-			rotate(&ps->stack_a);
+			run_rotate(ps, "ra");
 			sort_two(ps);
 		}
 		else if (index == 1)
 		{
-			rotate_reverse(&ps->stack_a);
+			run_rotate_reverse(ps, "rra");
 			sort_two(ps);
 		}
 		else
@@ -51,18 +51,18 @@ void	sort_four(t_push_swap *ps)
 	{
 		if (index == 0)
 		{
-			push(&ps->stack_a, &ps->stack_b);
+			run_push(ps, "pb");
 			sort_three(ps);
-			push(&ps->stack_b, &ps->stack_a);
+			run_push(ps, "pa");
 		}
 		else if (index == 3)
 		{
-			rotate_reverse(&ps->stack_a);
+			run_rotate_reverse(ps, "rra");
 			sort_four(ps);
 		}
 		else
 		{
-			rotate_reverse(&ps->stack_a);
+			run_rotate_reverse(ps, "rra");
 			sort_four(ps);
 		}
 	}
@@ -77,18 +77,18 @@ void	sort_five(t_push_swap *ps)
 	{
 		if (index == 0)
 		{
-			push(&ps->stack_a, &ps->stack_b);
+			run_push(ps, "pb");
 			sort_four(ps);
-			push(&ps->stack_b, &ps->stack_a);
+			run_push(ps, "pa");
 		}
 		else if (index == 1 || index == 2)
 		{
-			rotate(&ps->stack_a);
+			run_rotate(ps, "ra");
 			sort_five(ps);
 		}
 		else
 		{
-			rotate_reverse(&ps->stack_a);
+			run_rotate_reverse(ps, "rra");
 			sort_five(ps);
 		}
 	}

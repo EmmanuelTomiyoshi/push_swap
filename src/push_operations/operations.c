@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   single_stack.c                                     :+:      :+:    :+:   */
+/*   operations_single_stack.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 21:02:37 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/08 19:46:20 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:34:02 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate_reverse(t_node **node)
+void	rotate_reverse(t_push_swap *ps, t_node **node)
 {
 	t_node	*temp;
 
@@ -22,7 +22,7 @@ void	rotate_reverse(t_node **node)
 	*node = temp;
 }
 
-void	rotate(t_node **node)
+void	rotate(t_push_swap *ps, t_node **node)
 {
 	t_node	*temp;
 
@@ -34,7 +34,7 @@ void	rotate(t_node **node)
 	*node = temp;
 }
 
-void	push(t_node **node1, t_node **node2)
+void	push(t_push_swap *ps, t_node **node1, t_node **node2)
 {
 	t_node	*temp;
 
@@ -46,7 +46,7 @@ void	push(t_node **node1, t_node **node2)
 	*node1 = temp;
 }
 
-void	swap(t_node **node)
+void	swap(t_push_swap *ps, t_node **node)
 {
 	t_node	*temp;
 

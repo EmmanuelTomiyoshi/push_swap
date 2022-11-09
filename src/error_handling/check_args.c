@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:02:36 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/08 22:58:58 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:31:41 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void	check_args(int argc, char *argv[])
 
 void	check_valid_number(char *argv[])
 {
-	int		i;
-	char	*result;
+	int	i;
 
 	i = 1;
 	while (argv[i])

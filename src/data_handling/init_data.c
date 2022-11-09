@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:17:32 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/07 22:54:01 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/09 17:59:22 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	init_data(t_push_swap *ps, int argc, char *argv[])
 {
+	ps->allow_print_ops = TRUE;
 	ps->argc = argc - 1;
+	ps->center_pivot = MAX_INT;
 	ps->stack_a = NULL;
 	ps->stack_b = NULL;
 	argv_atoi(ps, argv);

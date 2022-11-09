@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/08 20:58:45 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:03:44 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 # define MAX_INT +2147483647
 # define MIN_INT -2147483648
+# define TRUE 1
+# define FALSE 0
 # include "libft.h"
 # include "ft_printf.h"
 
@@ -29,6 +31,9 @@ typedef struct s_push_swap
 	t_node	*stack_b;
 	int		argc;
 	int		*argv;
+	
+	int		center_pivot;
+	int		allow_print_ops;
 }				t_push_swap;
 
 //Check arguments
@@ -65,14 +70,15 @@ t_node	*before_last(t_node *node);
 void	stack_building(t_push_swap *ps);
 
 //Push operations
-void	rotate_reverse(t_node **node);
-void	rotate_reverse_both(t_node **node1, t_node **node2);
-void	rotate(t_node **node);
-void	rotate_both(t_node **node1, t_node **node2);
+void	rotate_reverse(t_push_swap *ps, t_node **node);
+void	rotate(t_push_swap *ps, t_node **node);
+void	push(t_push_swap *ps, t_node **node1, t_node **node2);
+void	swap(t_push_swap *ps, t_node **node);
+void	run_push(t_push_swap *ps, char *operation);
+void	run_swap(t_push_swap *ps, char *operation);
+void	run_rotate(t_push_swap *ps, char *operation);
+void	run_rotate_reverse(t_push_swap *ps, char *operation);
 t_node	*before_last(t_node *node);
-void	push(t_node **node1, t_node **node2);
-void	swap(t_node **node);
-void	swap_both(t_node **node1, t_node **node2);
 
 // void	check_is_digit(char *str);
 void	check_is_digit(char *str);
@@ -80,6 +86,7 @@ void	check_limits_int(char *str);
 
 //Print stacks
 void	print_stacks(t_node *a, t_node *b);
+void	print_array(t_push_swap *ps);
 
 //Free memory
 void	free_memory(t_push_swap *ps);

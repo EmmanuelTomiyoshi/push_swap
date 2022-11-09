@@ -17,7 +17,7 @@ BIN				= bin/push_swap
 
 
 LIBFLAGS 		= -lft
-#CFLAGS 		= -Wall -Werror -Wextra
+# CFLAGS 		= -Wall -Werror -Wextra
 CFLAGS 			+= -g -I ${FT_PRINTFDIR} -I ${LIBFTDIR} -I ${INCDIR}
 LIBFLAGS 		= -lft -lftprintf
 CC 				= cc
@@ -33,9 +33,9 @@ FILES   		=	data_handling/free_memory.c					\
 					node_operations/ft_nodeadd_back.c			\
 					node_operations/ft_nodeadd_front.c			\
 					node_operations/ft_nodel.c					\
-					other/print_stacks.c						\
-					push_operations/operations_both_stacks.c	\
-					push_operations/operations_single_stack.c	\
+					print/print_stacks.c						\
+					push_operations/operations.c				\
+					push_operations/run.c						\
 					sort_algorithm/check_is_sorted.c			\
 					sort_algorithm/less_than_six.c				\
 					sort_algorithm/utils_sort_algorithm.c		\

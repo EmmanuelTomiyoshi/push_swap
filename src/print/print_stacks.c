@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:34:49 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/09 12:29:52 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:41:27 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	print_stacks(t_node *a, t_node *b)
 	lst_size_b = 0;
 	aux_a = a;
 	aux_b = b;
+	printf("\n");
+	printf("----------------------------\n");
 	while (aux_a)
 	{
 		lst_size_a++;

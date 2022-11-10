@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/09 18:03:44 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/10 20:00:49 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ typedef struct s_push_swap
 	t_node	*stack_b;
 	int		argc;
 	int		*argv;
+	int		*new_argv;
 	
 	int		center_pivot;
 	int		allow_print_ops;
+	int		nelem;
 }				t_push_swap;
 
 //Check arguments
@@ -87,6 +89,11 @@ void	check_limits_int(char *str);
 //Print stacks
 void	print_stacks(t_node *a, t_node *b);
 void	print_array(t_push_swap *ps);
+
+//Sort algorithm
+void	bubble_sort(int *argv, int size);
+int		count_stack_elements(t_node **node);
+int		*create_sub_array(t_push_swap *ps);
 
 //Free memory
 void	free_memory(t_push_swap *ps);

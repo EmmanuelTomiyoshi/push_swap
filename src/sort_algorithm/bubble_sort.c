@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_memory.c                                      :+:      :+:    :+:   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 17:18:25 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/10 20:39:21 by etomiyos         ###   ########.fr       */
+/*   Created: 2022/11/10 14:42:36 by etomiyos          #+#    #+#             */
+/*   Updated: 2022/11/10 20:18:09 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_memory(t_push_swap *ps)
+void	bubble_sort(int *argv, int size)
 {
-	free(ps->argv);
-	ft_clearnode(ps->stack_a);
-	ft_clearnode(ps->stack_b);
+	int i;
+	int j;
+	int temp;
+
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (argv[j] > argv[j + 1])
+			{
+				temp = argv[j];
+				argv[j] = argv[j + 1];
+				argv[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }

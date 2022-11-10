@@ -36,6 +36,7 @@ FILES   		=	data_handling/free_memory.c					\
 					print/print_stacks.c						\
 					push_operations/operations.c				\
 					push_operations/run.c						\
+					sort_algorithm/bubble_sort.c				\
 					sort_algorithm/check_is_sorted.c			\
 					sort_algorithm/less_than_six.c				\
 					sort_algorithm/utils_sort_algorithm.c		\
@@ -108,6 +109,11 @@ re: fclean all
 norm:
 	@clear
 	@norminette ${SRC} ${INCDIR}* | grep Error || true
+
+test:
+	@make
+	@clear
+	./push_swap 3 9 4 2 7 1 0 10
 
 .PHONY: re fclean clean all norm
 

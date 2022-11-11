@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 21:10:15 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/10 21:36:06 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:19:55 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 void	get_center_pivot(t_push_swap *ps)
 {
-	int *argv;
+	int	*argv;
 
 	argv = create_sub_array(ps);
-	// printArray(argv, ps->nelem);
 	bubble_sort(argv, ps->nelem);
-	// printArray(argv, ps->nelem);
 	ps->center_pivot = argv[(ps->nelem - 1) / 2];
 }
 
@@ -47,7 +45,7 @@ void	divide_to_conquer(t_push_swap *ps)
 
 	ps->nelem = ps->argc;
 	get_center_pivot(ps);
-	free(ps->new_argv); // //
+	free(ps->new_argv);
 	last = ft_lastnode(ps->stack_a)->value;
 	while (ps->nelem > 2)
 	{
@@ -63,13 +61,11 @@ void	divide_to_conquer(t_push_swap *ps)
 			else
 				run_rotate(ps, "ra");
 		}
-		if (ps->center_pivot != 7)
-			printf("pivot: %d\n", ps->center_pivot);
 		ps->nelem = count_node_elements(&ps->stack_a);
 		get_center_pivot(ps);
 		free(ps->new_argv); // //
-		print_stacks(ps->stack_a, ps->stack_b);
-		printf("pivot: %d\n", ps->center_pivot);
+		print_stacks(ps->stack_a, ps->stack_b, ps);
+		// printf("pivot: %d\n", ps->center_pivot);
 	}
 }
 
@@ -84,12 +80,12 @@ void	quick_sort(t_push_swap *ps)
 		{
 			run_rotate(ps, "ra");
 			run_push(ps, "pa");
-			print_stacks(ps->stack_a, ps->stack_b);
+			print_stacks(ps->stack_a, ps->stack_b, ps);
 			break ;
 		}
 		top_stack_a = ps->stack_a->value;
-		printf("top_stack_a: %d | ", top_stack_a);
-		printf("top_stack_b: %d\n", ps->stack_b->value);
+		// printf("top_stack_a: %d | ", top_stack_a);
+		// printf("top_stack_b: %d\n", ps->stack_b->value);
 		if (top_stack_a > ps->stack_b->value)
 			run_push(ps, "pa");
 		else if (top_stack_a < ps->stack_b->value)
@@ -99,7 +95,12 @@ void	quick_sort(t_push_swap *ps)
 		}
 		else
 			break ;
-		print_stacks(ps->stack_a, ps->stack_b);
+		print_stacks(ps->stack_a, ps->stack_b, ps);
 	}
-	
+	//mudar
+	// while (!is_sorted(ps))
+	// {
+	// 	run_rotate_reverse(ps, "rra");
+	// }
+	print_stacks(ps->stack_a, ps->stack_b, ps);
 }

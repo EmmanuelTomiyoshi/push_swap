@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:53:53 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/10 21:11:04 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/10 23:20:51 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int	main(int argc, char *argv[])
 	check_args(argc, argv);
 	init_data(&ps, argc, argv);
 	stack_building(&ps);
-
-	print_stacks(ps.stack_a, ps.stack_b);
+	print_stacks(ps.stack_a, ps.stack_b, &ps);
 	quick_sort(&ps);
 	// print_stacks(ps.stack_a, ps.stack_b);
 	// temp = traverse_node(&ps.stack_a, 0);
@@ -32,5 +31,3 @@ int	main(int argc, char *argv[])
 	free_memory(&ps);
 	return (0);
 }
-
-//traverse_stack_node(&ps, 2);

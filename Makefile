@@ -33,12 +33,15 @@ FILES   		=	data_handling/free_memory.c					\
 					node_operations/ft_nodeadd_back.c			\
 					node_operations/ft_nodeadd_front.c			\
 					node_operations/ft_nodel.c					\
+					node_operations/ft_count_node_elements.c	\
+					node_operations/ft_traverse_node.c			\
 					print/print_stacks.c						\
 					push_operations/operations.c				\
 					push_operations/run.c						\
 					sort_algorithm/bubble_sort.c				\
 					sort_algorithm/check_is_sorted.c			\
 					sort_algorithm/less_than_six.c				\
+					sort_algorithm/quick_sort.c					\
 					sort_algorithm/utils_sort_algorithm.c		\
 					main.c
 # FILES_B		=	

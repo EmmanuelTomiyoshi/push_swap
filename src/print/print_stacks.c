@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:34:49 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/10 20:41:27 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/10 21:00:53 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,15 @@ void	print_stacks(t_node *a, t_node *b)
 	printf("\t A\t\t B\n");
 }
 
-void	print_array(t_push_swap *ps)
+void    printArray(int array[], int size)
 {
-	int i;
+    int i;
 
-	i = 1;
-	while (i <= ps->argc)
-	{
-		printf("%d ", ps->argv[i]);
-		i++;
-	}
-	printf("\n");
+    i = 0;
+    while (i < size)
+    {
+        printf("%d  ", array[i]);
+        i++;
+    }
+    printf("\n");
 }

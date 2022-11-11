@@ -1,55 +1,55 @@
-// int	partition(t_push_swap *ps, int low, int high)
-// {
-// 	int pivot;
-// 	int i;
-// 	int j;
-// 	int aux;
-// 	t_node *temp;
+void    swap_arr(int *a, int *b)
+{
+    int t;
 
-// 	// temp = traverse_stack_index(&ps->stack_a, 1);
-// 	// printf("value: %d\n", temp->value);
+    t = *a;
+    *a = *b;
+    *b = t;
+}
 
-// 	pivot = ps->center_pivot;
-// 	// printf("pivot: %d\n", pivot);
+int partition(int array[], int leftmost, int rightmost)
+{
+    int pivot;
+    int i;
+    int j;
 
-// 	i = (low - 1);
-// 	j = low;
-// 	aux = traverse_stack_index(&ps->stack_a, j)->value;
-// 	while (j < high)
-// 	{
-// 		if (aux <= pivot)
-// 		{
-// 			i++;
-// 			temp = traverse_stack_index(&ps->stack_a, i);
+    pivot = array[rightmost];
+    i = (leftmost - 1);
+    j = leftmost;
+    while (j < rightmost)
+    {
+        if (array[j] <= pivot)
+        {
+            i++;
+            // printf("\ndentro: array[i] = %d | array[j] = %d\n",
+            // i, array[i], j, array[j]);
+            swap_arr(&array[i], &array[j]);
+        }
+        j++;
+    }
+    swap_arr(&array[i + 1], &array[rightmost]);
+    // printf("\nfora: array[i + 1] = %d | array[%d] = %d\n",
+    // i, array[i + 1], rightmost, array[rightmost]);
 
-// 			// swap(&array[i], &array[j]);
-// 			run_push(ps, "pb");
-// 		}
-// 		j++;
-// 	}
-// 	temp = traverse_stack_index(&ps->stack_a, (i + 1));
-// 	//swap(&array[i + 1], &array[rightmost]);
-// 	//swap(ps, &temp); //
+    return (i + 1);
+}
 
-// 	return (i + 1);
-// }
-// //swap(node1, node2)
+//low = leftmost | high = rightmost
+void    quickSort(int array[], int leftmost, int rightmost)
+{
+    int pi;
 
-// //7 6 ->
-// //6 7
+    // static int p = 0;
 
-// //7 6 5 4 3 2 1
-// //i = 7 | j = 1;
+    // printf("\np: %d\n", p);
+    // p++;
+    // if (p == 1)
+    //     printf("low: %d | high: %d\n", leftmost, rightmost);
+    if (leftmost < rightmost)
+    {
+        pi = partition(array, leftmost, rightmost);
 
-// void	quick_sort(t_push_swap *ps, int low, int high)
-// {
-// 	int pi;
-
-// 	if (low < high)
-// 	{
-// 		pi = partition(ps, low, high);
-		
-// 		quick_sort(ps, low, pi - 1);
-// 		quick_sort(ps, pi + 1, high);
-// 	}
-// }
+        quickSort(array, leftmost, pi - 1);
+        quickSort(array, pi + 1, rightmost);
+    }
+}

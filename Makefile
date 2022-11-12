@@ -32,9 +32,8 @@ FILES   		=	data_handling/free_memory.c						\
 					node_operations/ft_newnode.c					\
 					node_operations/ft_nodeadd_back.c				\
 					node_operations/ft_nodeadd_front.c				\
-					node_operations/ft_nodel.c						\
+					node_operations/ft_nodelete.c					\
 					node_operations/ft_count_node_elements.c		\
-					node_operations/ft_traverse_node.c				\
 					print/print_stacks.c							\
 					push_operations/operations.c					\
 					push_operations/run.c							\
@@ -117,8 +116,7 @@ norm:
 test:
 	@clear
 	@make
-	./push_swap 31 29 5 2 6 4 25 8 12 33 3 9 10 13 26 30 11 7
-#valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap 3 12 10 14 9 1 6 13
+	valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap 3 12 10 14 9 1 6 13
 .PHONY: re fclean clean all norm
 
 COLOR_WHITE		= \e[00m

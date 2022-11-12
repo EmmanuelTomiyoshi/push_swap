@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_nodel(t_node *lst, void (*del)(int))
+void	ft_nodelete(t_node *lst, void (*del)(int))
 {
 	del(lst->value);
 	free(lst);

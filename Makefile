@@ -40,11 +40,9 @@ FILES   		=	data_handling/free_memory.c						\
 					push_operations/run.c							\
 					sort_algorithm/bubble_sort.c					\
 					sort_algorithm/check_is_sorted.c				\
-					sort_algorithm/less_than_six.c					\
-					sort_algorithm/quick_sort/quick_sort.c			\
-					sort_algorithm/quick_sort/utils_quick_sort.c	\
 					sort_algorithm/short_nb_elem/sort_stack_a.c		\
 					sort_algorithm/short_nb_elem/sort_stack_b.c		\
+					sort_algorithm/radix.c							\
 					sort_algorithm/utils_sort_algorithm.c			\
 					main.c
 # FILES_B		=	

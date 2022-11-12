@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/11 23:31:00 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/12 13:20:24 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				index;
 	struct s_node	*next;
 }				t_node;
 
@@ -33,15 +34,15 @@ typedef struct s_push_swap
 	t_node	*stack_b;
 	int		argc;
 	int		*argv;
-	int		*new_argv;
+	int		*int_value; //
+	int		*copy_value;
+	int		*map_index;
 
 	int		center_pivot;
 	int		allow_print_ops;
 	int		allow_print_stacks;
-	int		nelem;
-	int		last_elem;
+	int 	list_size;
 
-	int		min;
 }				t_push_swap;
 
 //------------------------------------------------------------
@@ -75,7 +76,7 @@ void	check_limits_int(char *str);
 void	ft_clearnode(t_node *stack);
 int		count_node_elements(t_node **node);
 t_node	*ft_lastnode(t_node *lst);
-t_node	*ft_newnode(int content);
+t_node	*ft_newnode(int content, int index);
 void	ft_nodeadd_back(t_node **lst, t_node *last_node);
 void	ft_nodeadd_front(t_node **lst, t_node *new);
 void	ft_nodel(t_node *lst, void (*del)(int));
@@ -87,6 +88,7 @@ t_node	*traverse_node(t_node **node, size_t index);
 //#PRINT_STACKS
 void	print_stacks(t_node *a, t_node *b, t_push_swap *ps);
 void	printArray(int array[], int size);
+void	print_index(t_node *a, t_node *b, t_push_swap *ps);
 
 //------------------------------------------------------------
 
@@ -122,16 +124,11 @@ void	sort_three_b(t_push_swap *ps);
 void	sort_four_b(t_push_swap *ps);
 void	sort_five_b(t_push_swap *ps);
 
-
-//quick_sort
-void	get_center_pivot(t_push_swap *ps);
-int		*create_sub_array(t_push_swap *ps);
-void	divide_to_conquer(t_push_swap *ps);
-void	divide_by_pivot(t_push_swap *ps);
-void	quick_sort(t_push_swap *ps);
-void	init_element_data(t_push_swap *ps);
-void	choose_best_method(t_push_swap *ps);
-
+//radix
+void	radix_sort(t_push_swap *ps);
+void	create_index(t_push_swap *ps);
+void	normalize_values(t_push_swap *ps);
+void	*ft_intmemcpy(void *dest, const void *src, size_t n);
 
 //utils_sort_algorithm
 int		check_highest_number(t_push_swap *ps);

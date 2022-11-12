@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_node	*ft_newnode(int content)
+t_node	*ft_newnode(int content, int index)
 {
 	t_node	*node;
 
@@ -20,6 +20,7 @@ t_node	*ft_newnode(int content)
 	if (node == NULL)
 		return (NULL);
 	node->value = content;
+	node->index = index;
 	node->next = NULL;
 	return (node);
 }

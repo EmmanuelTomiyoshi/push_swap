@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:36:01 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/12 15:56:51 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:49:11 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	radix_sort(t_push_swap *ps)
 {
 	int	i;
 	int	j;
+
 	i = 0;
 	while (i < ps->bits_size)
 	{

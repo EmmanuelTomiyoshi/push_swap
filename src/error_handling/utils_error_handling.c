@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 20:42:27 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/08 22:59:28 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:41:06 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ void	check_limits_int(char *str)
 		str++;
 	converted_str = ft_itoa(ft_atoi(str));
 	if (ft_strncmp(converted_str, str, ft_strlen(str)) != 0)
+	{
+		free(converted_str);
 		error_message();
+	}
 	free(converted_str);
 }

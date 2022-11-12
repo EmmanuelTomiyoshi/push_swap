@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/10 23:14:50 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/11 23:31:00 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_push_swap
 	int		allow_print_ops;
 	int		allow_print_stacks;
 	int		nelem;
+	int		last_elem;
 
 	int		min;
 }				t_push_swap;
@@ -107,17 +108,31 @@ void	run_rotate_reverse(t_push_swap *ps, char *operation);
 //bubble_sort
 void	bubble_sort(int *argv, int size);
 //check_is_sorted
-int		is_sorted(t_push_swap *ps);
-//less_than_six
-void	sort_two(t_push_swap *ps);
-void	sort_three(t_push_swap *ps);
-void	sort_four(t_push_swap *ps);
-void	sort_five(t_push_swap *ps);
+int		is_sorted(t_node **node);
+
+
+//STACK A
+void	sort_two_a(t_push_swap *ps);
+void	sort_three_a(t_push_swap *ps);
+void	sort_four_a(t_push_swap *ps);
+void	sort_five_a(t_push_swap *ps);
+//STACK B
+void	sort_two_b(t_push_swap *ps);
+void	sort_three_b(t_push_swap *ps);
+void	sort_four_b(t_push_swap *ps);
+void	sort_five_b(t_push_swap *ps);
+
+
 //quick_sort
 void	get_center_pivot(t_push_swap *ps);
 int		*create_sub_array(t_push_swap *ps);
 void	divide_to_conquer(t_push_swap *ps);
+void	divide_by_pivot(t_push_swap *ps);
 void	quick_sort(t_push_swap *ps);
+void	init_element_data(t_push_swap *ps);
+void	choose_best_method(t_push_swap *ps);
+
+
 //utils_sort_algorithm
 int		check_highest_number(t_push_swap *ps);
 int		check_lowest_number(t_push_swap *ps);

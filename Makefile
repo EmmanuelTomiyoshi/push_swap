@@ -22,27 +22,30 @@ CFLAGS 			+= -g -I ${FT_PRINTFDIR} -I ${LIBFTDIR} -I ${INCDIR}
 LIBFLAGS 		= -lft -lftprintf
 CC 				= cc
 
-FILES   		=	data_handling/free_memory.c					\
-					data_handling/init_data.c					\
-					error_handling/check_args.c					\
-					error_handling/error_message.c				\
-					error_handling/utils_error_handling.c		\
-					node_operations/ft_clearnode.c				\
-					node_operations/ft_lastnode.c				\
-					node_operations/ft_newnode.c				\
-					node_operations/ft_nodeadd_back.c			\
-					node_operations/ft_nodeadd_front.c			\
-					node_operations/ft_nodel.c					\
-					node_operations/ft_count_node_elements.c	\
-					node_operations/ft_traverse_node.c			\
-					print/print_stacks.c						\
-					push_operations/operations.c				\
-					push_operations/run.c						\
-					sort_algorithm/bubble_sort.c				\
-					sort_algorithm/check_is_sorted.c			\
-					sort_algorithm/less_than_six.c				\
-					sort_algorithm/quick_sort.c					\
-					sort_algorithm/utils_sort_algorithm.c		\
+FILES   		=	data_handling/free_memory.c						\
+					data_handling/init_data.c						\
+					error_handling/check_args.c						\
+					error_handling/error_message.c					\
+					error_handling/utils_error_handling.c			\
+					node_operations/ft_clearnode.c					\
+					node_operations/ft_lastnode.c					\
+					node_operations/ft_newnode.c					\
+					node_operations/ft_nodeadd_back.c				\
+					node_operations/ft_nodeadd_front.c				\
+					node_operations/ft_nodel.c						\
+					node_operations/ft_count_node_elements.c		\
+					node_operations/ft_traverse_node.c				\
+					print/print_stacks.c							\
+					push_operations/operations.c					\
+					push_operations/run.c							\
+					sort_algorithm/bubble_sort.c					\
+					sort_algorithm/check_is_sorted.c				\
+					sort_algorithm/less_than_six.c					\
+					sort_algorithm/quick_sort/quick_sort.c			\
+					sort_algorithm/quick_sort/utils_quick_sort.c	\
+					sort_algorithm/short_nb_elem/sort_stack_a.c		\
+					sort_algorithm/short_nb_elem/sort_stack_b.c		\
+					sort_algorithm/utils_sort_algorithm.c			\
 					main.c
 # FILES_B		=	
 
@@ -114,10 +117,10 @@ norm:
 	@norminette ${SRC} ${INCDIR}* | grep Error || true
 
 test:
-	@make
 	@clear
-	./push_swap 3 9 4 2 7 1 0 10
-
+	@make
+	./push_swap 31 29 5 2 6 4 25 8 12 33 3 9 10 13 26 30 11 7
+#valgrind --leak-check=full --show-leak-kinds=all -s ./push_swap 3 12 10 14 9 1 6 13
 .PHONY: re fclean clean all norm
 
 COLOR_WHITE		= \e[00m

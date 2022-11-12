@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:53:53 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/10 23:20:51 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/11 23:38:52 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char *argv[])
 	stack_building(&ps);
 	print_stacks(ps.stack_a, ps.stack_b, &ps);
 	quick_sort(&ps);
-	// print_stacks(ps.stack_a, ps.stack_b);
+	// print_stacks(ps.stack_a, ps.stack_b, &ps);
 	// temp = traverse_node(&ps.stack_a, 0);
 	// print_stacks(ps.stack_a, ps.stack_b);
 	// get_center_pivot(&ps);

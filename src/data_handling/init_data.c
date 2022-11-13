@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 17:17:32 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/12 17:12:23 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/13 00:07:55 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	init_position_sizes(t_push_swap *ps, int argc)
 {
 	ps->argc = argc - 1;
 	ps->list_size = ps->argc;
-	ps->center_pivot = MAX_INT;
 }
 
 void	init_dynamic_data(t_push_swap *ps)

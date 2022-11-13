@@ -6,7 +6,7 @@
 /*   By: etomiyos <etomiyos@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 20:36:54 by etomiyos          #+#    #+#             */
-/*   Updated: 2022/11/12 17:30:27 by etomiyos         ###   ########.fr       */
+/*   Updated: 2022/11/13 00:07:52 by etomiyos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_push_swap
 	int		*copy_value;
 	int		*map_index;
 	int		bits_size;
-	int		center_pivot;
 	int		list_size;
 }				t_push_swap;
 
